@@ -72,6 +72,8 @@
 ##### 1.13. Create nagiosadmin User Account
 
       sudo htpasswd -c /usr/local/nagios/etc/htpasswd.users nagiosadmin
+      
+* Note: If you create a user with a name other than nagiosadmin, you will need to edit /usr/local/nagios/etc/cgi.cfg and change all the nagiosadmin references to the user you created.
 
 ##### 1.14. Start Apache Web Server
 
@@ -168,12 +170,6 @@
               command_line $USER1$/check_nrpe -H $HOSTADDRESS$ -c $ARG1$
       }
 
-##### 4.4. configure Apache to serve the Nagios user interface. Enable the Apache rewrite and cgi modules with the a2enmod command:
-
-      sudo a2enmod rewrite
-      sudo a2enmod cgi
-      
-##### 4.5. Use the htpasswd command to create an admin user called nagiosadmin that can access the Nagios web interface:
 
       
 ---
