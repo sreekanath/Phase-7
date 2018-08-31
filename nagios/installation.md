@@ -1,6 +1,5 @@
-https://support.nagios.com/kb/article/nagios-core-installing-nagios-core-from-source-96.html#Ubuntu
 
-https://www.digitalocean.com/community/tutorials/how-to-install-nagios-4-and-monitor-your-servers-on-ubuntu-16-04
+### Installation and configure hosts: https://www.digitalocean.com/community/tutorials/how-to-install-nagios-4-and-monitor-your-servers-on-ubuntu-16-04
 
 After the installtion & setup done
 
@@ -21,4 +20,8 @@ Server Status in Nagios:
 Start the client server and wait for sometime (then refresh the nagios server in browser)
 
 ![image](https://user-images.githubusercontent.com/24622526/44899983-eba01480-acf2-11e8-9317-ff1e61660f71.png)
+
+
+### Installtion steps in official page : https://support.nagios.com/kb/article/nagios-core-installing-nagios-core-from-source-96.html#Ubuntu
+
 
