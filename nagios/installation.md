@@ -170,8 +170,65 @@
               command_line $USER1$/check_nrpe -H $HOSTADDRESS$ -c $ARG1$
       }
 
+## Step-5: Installing NPRE on a Host
 
+* Create an Ubuntu machine.
+
+* Connect to the ubuntu instance.
+
+      sudo -i
+
+      sudo useradd nagios
+
+      sudo apt-get update
+
+      sudo apt-get install build-essential libgd2-xpm-dev openssl libssl-dev unzip -y
       
+      cd ~
+
+      curl -L -O http://nagios-plugins.org/download/nagios-plugins-2.2.1.tar.gz
+      
+      tar zxf nagios-plugins-*.tar.gz
+      
+      cd nagios-plugins-*
+      
+      ./configure --with-nagios-user=nagios --with-nagios-group=nagios --with-openssl
+      
+      make
+      
+      make install
+
+      cd ~
+      curl -L -O https://github.com/NagiosEnterprises/nrpe/releases/download/nrpe-3.2.1/nrpe-3.2.1.tar.gz
+      
+      tar zxf nrpe-*.tar.gz
+      
+      cd nrpe-*
+      
+      ./configure --enable-command-args --with-nagios-user=nagios --with-nagios-group=nagios --with-ssl=/usr/bin/openssl --with-ssl-lib=/usr/lib/x86_64-linux-gnu
+      
+      make all
+      sudo make install
+      sudo make install-config
+      sudo make install-init
+      
+      vi /usr/local/nagios/etc/nrpe.cfg
+      
+* Add the PRIVATE IP address of Nagios Server.
+
+      ![image](https://user-images.githubusercontent.com/24622526/44913127-f4591080-ad1b-11e8-895e-2d7b564442dd.png)
+
+* Start NRPE:
+
+      systemctl start nrpe.service
+      
+* check the status of NRPE:
+
+      systemctl status nrpe.service
+      
+![image](https://user-images.githubusercontent.com/24622526/44913309-7fd2a180-ad1c-11e8-85e5-bd246a7d02ef.png)
+
+     
 ---
 
 
