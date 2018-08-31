@@ -161,6 +161,21 @@
 
       vi /usr/local/nagios/etc/objects/commands.cfg
 
+* Add the following to the end of the file to define a new command called check_nrpe:
+
+      define command{
+              command_name check_nrpe
+              command_line $USER1$/check_nrpe -H $HOSTADDRESS$ -c $ARG1$
+      }
+
+##### 4.4. configure Apache to serve the Nagios user interface. Enable the Apache rewrite and cgi modules with the a2enmod command:
+
+      sudo a2enmod rewrite
+      sudo a2enmod cgi
+      
+##### 4.5. Use the htpasswd command to create an admin user called nagiosadmin that can access the Nagios web interface:
+
+      
 ---
 
 
