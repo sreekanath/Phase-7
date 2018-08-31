@@ -85,33 +85,36 @@ https://www.linkedin.com/pulse/container-monitoring-nagios-vinay-thakur/
 
       sudo make install-config
 
-##### 1.10. Install Apache Config Files
+##### 1.11. Install Apache Config Files
 
       sudo make install-webconf
       sudo a2enmod rewrite
       sudo a2enmod cgi
 
-##### 1.10. Configure Firewall
+##### 1.12. Configure Firewall
 
       sudo ufw allow Apache
       sudo ufw reload
 
-##### 1.10. Create nagiosadmin User Account
+##### 1.13. Create nagiosadmin User Account
 
       sudo htpasswd -c /usr/local/nagios/etc/htpasswd.users nagiosadmin
 
-##### 1.10. Start Apache Web Server
+##### 1.14. Start Apache Web Server
 
       sudo systemctl restart apache2.service
 
-##### 1.10. Start Service / Daemon
+##### 1.15. Start Service / Daemon
 
       sudo systemctl start nagios.service
 
-##### 1.10. Launch nagios in brwoser at http://10.25.5.143/nagios
+##### 1.16. Launch nagios in brwoser at http://10.25.5.143/nagios
 
 ![image](https://user-images.githubusercontent.com/24622526/44909446-eb157700-ad0e-11e8-919d-68a357bc8244.png)
 
+* Error message: (No output on stdout) stderr: execvp(/usr/local/nagios/libexec/check_load, ...) failed. errno is 2: No such file or directory 
+
+* to fix this, we need to install plugins.
 
 ## Step-2: Install Plugins
 
@@ -138,16 +141,12 @@ https://www.linkedin.com/pulse/container-monitoring-nagios-vinay-thakur/
 
 * Wait for some time and launch the above URL in browser The error you previously saw should now disappear and the correct output will be shown on the screen.
 
-##### 1.10.
-
-##### 1.10. 
-
-
 ![image](https://user-images.githubusercontent.com/24622526/44909610-81499d00-ad0f-11e8-8c66-34ad9aa5428d.png)
 
+##### Commands to START/STOP/RESTART/STATUS nagios.
 
-sudo systemctl start nagios.service
-sudo systemctl stop nagios.service
-sudo systemctl restart nagios.service
-sudo systemctl status nagios.service
+      sudo systemctl start nagios.service
+      sudo systemctl stop nagios.service
+      sudo systemctl restart nagios.service
+      sudo systemctl status nagios.service
 
