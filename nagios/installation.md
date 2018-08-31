@@ -24,4 +24,5 @@ Start the client server and wait for sometime (then refresh the nagios server in
 
 ### Installtion steps in official page : https://support.nagios.com/kb/article/nagios-core-installing-nagios-core-from-source-96.html#Ubuntu
 
+https://www.linkedin.com/pulse/container-monitoring-nagios-vinay-thakur/
 
