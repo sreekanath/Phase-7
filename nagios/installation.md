@@ -126,6 +126,41 @@
       sudo systemctl restart nagios.service
       sudo systemctl status nagios.service
       
+## Step-3: Installing the check_nrpe Plugin
+
+##### 3.1. Download & extract nrpe
+
+      cd ~
+      curl -L -O https://github.com/NagiosEnterprises/nrpe/releases/download/nrpe-3.2.1/nrpe-3.2.1.tar.gz
+      
+      tar zxf nrpe-*.tar.gz
+      
+      cd nrpe-*
+      
+##### 3.2. Configure check_nrpe
+
+      ./configure
+
+##### 3.3. build and install check_nrpe
+
+      make check_nrpe
+      sudo make install-plugin
+      
+## Step-4: Configuring Nagios
+
+##### 4.1. Edit the file: vi /usr/local/nagios/etc/nagios.cfg
+
+      Uncomment the line
+      cfg_dir=/usr/local/nagios/etc/servers
+      
+##### 4.2. create the directory that will store the configuration file for each server that you will monitor
+
+      mkdir /usr/local/nagios/etc/servers
+      
+##### 4.3. add a new command to your Nagios configuration that lets you use the check_nrpe
+
+      vi /usr/local/nagios/etc/objects/commands.cfg
+
 ---
 
 
