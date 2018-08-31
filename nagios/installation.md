@@ -228,7 +228,21 @@
       
 ![image](https://user-images.githubusercontent.com/24622526/44913309-7fd2a180-ad1c-11e8-85e5-bd246a7d02ef.png)
 
-     
+* allow access to port 5666 through the firewall.
+
+      ufw allow 5666/tcp 
+      
+Step-6: On Nagios Server:
+
+* Run the following command on the Nagios server:
+
+      /usr/local/nagios/libexec/check_nrpe -H private-ip-address-of-host
+      
+      Output: 
+      NRPE v3.2.1
+      
+
+      
 ---
 
 
