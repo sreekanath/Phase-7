@@ -1,14 +1,14 @@
-1. create user with policies
+#### 1. create user with policies
 
-2. create user with MFA. example with S3 bucket.
+#### 2. create user with MFA. example with S3 bucket.
 
-3. Create user with groups.
+#### 3. Create user with groups.
 
-4. Login User from AWS console.
+#### 4. Login User from AWS console.
 
-5. List the users using AWS CLI. - aws configure, aws iam list-users
+#### 5. List the users using AWS CLI. - aws configure, aws iam list-users
 
-6. Creating group & user using AWS CLI.
+#### 6. Creating group & user using AWS CLI.
 
       aws iam create-group --group-name ec2admins
 
