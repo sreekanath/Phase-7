@@ -12,3 +12,5 @@ https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/RoutingToS3Bucket.html
 
 https://www.freenom.com/
 
+
+
