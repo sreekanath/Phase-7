@@ -10,6 +10,8 @@ https://docs.aws.amazon.com/AmazonS3/latest/dev/website-hosting-custom-domain-wa
 
 https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/RoutingToS3Bucket.html
 
+https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/SOA-NSrecords.html
+
 https://www.freenom.com/
 
 FYI:
