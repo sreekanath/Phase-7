@@ -14,6 +14,8 @@ https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/SOA-NSrecords.html
 
 https://www.inmotionhosting.com/support/domain-names/dns-nameserver-changes/what-is-a-name-server
 
+https://support.dnsimple.com/articles/soa-record/
+
 https://www.freenom.com/
 
 FYI:
