@@ -12,6 +12,8 @@ https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/RoutingToS3Bucket.html
 
 https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/SOA-NSrecords.html
 
+https://www.inmotionhosting.com/support/domain-names/dns-nameserver-changes/what-is-a-name-server
+
 https://www.freenom.com/
 
 FYI:
