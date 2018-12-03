@@ -1,5 +1,13 @@
 apt-get update -y && apt-get install awscli -y
 
+Or
+
+apt-get update -y && python3 python-pip -y
+
+pip install awscli
+
+aws --version
+
 aws help
 
 aws [options] <command> <subcommand> [parameters]
@@ -111,5 +119,48 @@ User should have *IAMFullAccess*.
 
 5. Create VPC
 
-6. Create S3.
+6. S3. : https://docs.aws.amazon.com/cli/latest/userguide/using-s3-commands.html
+
+  User should have *AmazonS3FullAccess*.
+
+        aws s3 help
+        
+        aws s3api help
+        
+        aws s3 ls
+        
+        create a bucket: aws s3 mb s3://mybucketsvn
+        
+        aws s3 ls s3://mybucketsvn
+        
+        aws s3 ls s3://bucket-name/path/
+        
+        echo "<center><h1>hello.." > index.html
+        
+        aws s3 cp index.html s3://mybucketsvn --grants read=uri=http://acs.amazonaws.com/groups/global/AllUsersc
+  
+        aws s3 ls s3://mybucketsvn
+        
+        mkdir sample
+        
+        touch sample/sample.txt
+        
+        touch sample/sample2.txt
+        
+        aws s3 cp sample
+        
+        aws s3 cp /root/sample/ s3://mybucketsvn/ --recursive
+        
+        aws s3 ls s3://mybucketsvn/sample
+        
+        aws s3 rm s3://mybucketsvn/sample/sample.txt
+        
+        Remove bucket: aws s3 rb s3://bucket-name
+        
+        Remove bucket by force: aws s3 rb s3://bucket-name --force
+        
+        
+        
+        
+
 
