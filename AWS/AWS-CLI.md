@@ -1,4 +1,4 @@
-### Install AWSCLI
+### Install AWS CLI
 
 refer: https://docs.aws.amazon.com/cli/latest/userguide/installing.html
 
@@ -200,6 +200,8 @@ User should have *IAMFullAccess*.
         Syntax if it is application LB: aws autoscaling attach-load-balancer-target-groups --auto-scaling-group-name my-asg --target-group-arns my-targetgroup-arn
 
         aws autoscaling attach-load-balancer-target-groups --auto-scaling-group-name DevOps-ASG --target-group-arns arn:aws:elasticloadbalancing:us-east-1:032654871437:targetgroup/DevOps-TG/4ef5d2163ec8a138
+        
+        Detach TG from ASG: aws autoscaling detach-load-balancer-target-groups --auto-scaling-group-name my-asg --target-group-arns my-targetgroup-arn
 
 5. Create VPC   
         
