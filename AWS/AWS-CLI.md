@@ -1,6 +1,8 @@
 ### Install AWS CLI
 
-refer: https://docs.aws.amazon.com/cli/latest/userguide/installing.html
+refer: 
+https://docs.aws.amazon.com/cli/latest/userguide/installing.html
+https://docs.aws.amazon.com/cli/latest/userguide/tutorial-ec2-ubuntu.html
 
     apt-get update -y && apt-get install awscli -y
 
