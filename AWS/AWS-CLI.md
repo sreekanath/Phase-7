@@ -255,9 +255,11 @@ User should have *IAMFullAccess*.
         
         aws ec2 authorize-security-group-ingress --group-id sg-0c67435e72190e13d --protocol tcp --port 22 --cidr 0.0.0.0/0
         
+        aws ec2 authorize-security-group-ingress --group-id sg-0c67435e72190e13d --protocol tcp --port 8080 --cidr 0.0.0.0/0
+        
     5.9. Create Ec2 instacne:
     
-        aws ec2 run-instances --image-id ami-026b6eb3e6c3027e8 --count 1 --instance-type t2.micro --key-name aws-2 --subnet-id subnet-0e4f7715367789ab0 --security-group-ids sg-0c67435e72190e13d
+        aws ec2 run-instances --image-id ami-026b6eb3e6c3027e8 --count 1 --instance-type t2.micro --key-name aws-2 --subnet-id subnet-0e4f7715367789ab0 --security-group-ids sg-0c67435e72190e13d --associate-public-ip-address
          
         
         
