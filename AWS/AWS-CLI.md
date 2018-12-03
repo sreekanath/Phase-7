@@ -1,16 +1,22 @@
-apt-get update -y && apt-get install awscli -y
+### Install AWSCLI
 
-Or
+refer: https://docs.aws.amazon.com/cli/latest/userguide/installing.html
 
-apt-get update -y && python3 python-pip -y
+    apt-get update -y && apt-get install awscli -y
 
-pip install awscli
+    Or
 
-aws --version
+    apt-get update -y && python3 python-pip -y
 
-aws help
+    pip install awscli
 
-aws [options] <command> <subcommand> [parameters]
+### AWS Commands:
+
+    aws --version
+
+    aws help
+
+    aws [options] <command> <subcommand> [parameters]
   
 aws configure
 
@@ -111,15 +117,7 @@ User should have *IAMFullAccess*.
         
         aws iam delete-user --user-name MyUser
         
-2. Create LB
-
-3. Create LC, ASG
-
-4. Attach LB to ASG.
-
-5. Create VPC
-
-6. S3. : https://docs.aws.amazon.com/cli/latest/userguide/using-s3-commands.html
+2. S3. : https://docs.aws.amazon.com/cli/latest/userguide/using-s3-commands.html
 
   User should have *AmazonS3FullAccess*.
 
@@ -155,11 +153,55 @@ User should have *IAMFullAccess*.
         
         aws s3 rm s3://mybucketsvn/sample/sample.txt
         
-        Remove bucket: aws s3 rb s3://bucket-name
+        Remove bucket: aws s3 rb s3://mybucketsvn
         
         Remove bucket by force: aws s3 rb s3://bucket-name --force
         
+        aws s3 ls
         
+2. Create LB: https://docs.aws.amazon.com/elasticloadbalancing/latest/application/tutorial-application-load-balancer-cli.html
+
+    aws elbv2 help
+    
+    2.1. TG
+    
+        aws elbv2 create-target-group --name DevOps-TG --protocol HTTP --port 8080 --vpc-id vpc-409c4f3a
+        
+        Note down the 'TargetGroupArn' from the output        
+    
+    2.2. LB
+    
+        aws elbv2 create-load-balancer --name DevOps-LB --subnets subnet-91a121cd subnet-59f2753e --security-groups sg-eba83ba7
+
+        Note down the 'LoadBalancerArn' from the output
+        
+    2.3. Create Listener:
+    
+        Syntax: aws elbv2 create-listener --load-balancer-arn LoadBalancerArn --protocol HTTP --port 80  --default-actions Type=forward,TargetGroupArn=targetgroup-arn
+    
+        ex: aws elbv2 create-listener --load-balancer-arn arn:aws:elasticloadbalancing:us-east-1:032654871437:loadbalancer/app/DevOps-LB/1bdda4c4ce80a2ae \
+        --protocol HTTP --port 80  \
+        --default-actions Type=forward,TargetGroupArn=arn:aws:elasticloadbalancing:us-east-1:032654871437:targetgroup/DevOps-TG/4ef5d2163ec8a138
+
+3. Create LC, ASG: EC2 full access is enough
+
+    aws autoscaling help
+
+    3.1. https://docs.aws.amazon.com/cli/latest/reference/autoscaling/create-launch-configuration.html
+    
+        aws autoscaling create-launch-configuration --launch-configuration-name DevOps-LC --key-name aws-2 --image-id ami-026b6eb3e6c3027e8 --instance-type t2.micro
+            
+    3.2. https://docs.aws.amazon.com/cli/latest/reference/autoscaling/create-auto-scaling-group.html
+
+        aws autoscaling create-auto-scaling-group --auto-scaling-group-name DevOps-ASG --launch-configuration-name DevOps-LC --min-size 2 --max-size 3 --availability-zones us-east-1a
+
+4. Attach LB/TG to ASG: https://docs.aws.amazon.com/autoscaling/ec2/userguide/attach-load-balancer-asg.html
+
+        Syntax if it is application LB: aws autoscaling attach-load-balancer-target-groups --auto-scaling-group-name my-asg --target-group-arns my-targetgroup-arn
+
+        aws autoscaling attach-load-balancer-target-groups --auto-scaling-group-name DevOps-ASG --target-group-arns arn:aws:elasticloadbalancing:us-east-1:032654871437:targetgroup/DevOps-TG/4ef5d2163ec8a138
+
+5. Create VPC   
         
         
 
