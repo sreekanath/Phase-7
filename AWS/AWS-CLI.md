@@ -36,6 +36,8 @@ User should have *AmazonEC2FullAccess*.
 
         aws ec2 describe-volumes --output text
         
+        aws ec2 describe-regions --output table
+        
         aws ec2 run-instances help
         
         aws ec2 describe-images help
@@ -61,6 +63,8 @@ User should have *AmazonEC2FullAccess*.
         aws ec2 describe-instances --filters "Name=instance-type,Values=t2.micro"
         
         aws ec2 terminate-instances --instance-ids i-07f5dc2f7b4a019f0 --output table
+        
+        
 
 ![image](https://user-images.githubusercontent.com/24622526/49352204-d618fd00-f6dc-11e8-9eab-3756290d7dbc.png)
 
@@ -213,7 +217,52 @@ User should have *IAMFullAccess*.
         
         Detach TG from ASG: aws autoscaling detach-load-balancer-target-groups --auto-scaling-group-name my-asg --target-group-arns my-targetgroup-arn
 
-5. Create VPC   
+5. Create VPC  
+
+    5.1. Create VPC: 
+    
+        aws ec2 create-vpc --cidr-block 10.0.0.0/16
+    
+    5.2. Create subnets:
+    
+        aws ec2 create-subnet --vpc-id vpc-09f6375a987f12be6 --cidr-block 10.0.1.0/24
+    
+        aws ec2 create-subnet --vpc-id vpc-09f6375a987f12be6 --cidr-block 10.0.2.0/24
+    
+    5.3. Create IGW
+    
+        aws ec2 create-internet-gateway
+    
+    5.4. Attach IGW to VPC: 
+    
+        aws ec2 attach-internet-gateway --internet-gateway-id igw-0c8fc01622a6a123c --vpc-id vpc-09f6375a987f12be6
+        
+    5.5. Create Route Table
+    
+        aws ec2 create-route-table --vpc-id vpc-09f6375a987f12be6
+        
+    5.6. Add Internet Gateway Rule
+    
+        aws ec2 create-route --route-table-id rtb-0ebffecb4daac994c --destination-cidr-block 0.0.0.0/0 --gateway-id igw-0c8fc01622a6a123c
+        
+    5.7. Associate Route Table to a Subnet
+    
+        aws ec2 associate-route-table --route-table-id rtb-0ebffecb4daac994c --subnet-id subnet-0e4f7715367789ab0
+        
+    5.8. Create Security group
+    
+        aws ec2 create-security-group --group-name devops-sg --vpc-id vpc-09f6375a987f12be6 --description "security group for devops"
+        
+        aws ec2 authorize-security-group-ingress --group-id sg-0c67435e72190e13d --protocol tcp --port 22 --cidr 0.0.0.0/0
+        
+    5.9. Create Ec2 instacne:
+    
+        aws ec2 run-instances --image-id ami-026b6eb3e6c3027e8 --count 1 --instance-type t2.micro --key-name aws-2 --subnet-id subnet-0e4f7715367789ab0 --security-group-ids sg-0c67435e72190e13d
+         
+        
+        
+    
+        
         
         
 
