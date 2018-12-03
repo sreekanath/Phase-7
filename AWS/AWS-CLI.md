@@ -42,6 +42,8 @@ User should have *AmazonEC2FullAccess*.
         
         aws ec2 describe-images --filters "Name=tag:Name,Values=DevOpsWebApp"
         
+        aws ec2 describe-images --filters "Name=tag:Name,Values=DevOpsWebApp" --query 'Images[*].{ID:ImageId}'
+        
         aws ec2 run-instances --image-id ami-026b6eb3e6c3027e8 --count 1 --instance-type t2.micro --key-name aws-2
         
         aws ec2 run-instances --image-id ami-026b6eb3e6c3027e8 --count 1 --instance-type t2.micro --key-name aws-2 --security-group-ids sg-068402cee3c9b7f81
