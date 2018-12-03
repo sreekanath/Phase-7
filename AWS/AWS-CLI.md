@@ -14,6 +14,8 @@ aws configure
 
 1. EC2: https://docs.aws.amazon.com/cli/latest/reference/ec2/index.html
 
+User should have *AmazonEC2FullAccess*.
+
         aws ec2 describe-instances
 
         aws ec2 describe-instances --output table
@@ -69,9 +71,37 @@ aws configure
         
         aws ec2 authorize-security-group-ingress --group-id sg-0f6d2f1f102155f13 --protocol tcp --port 22 --cidr 0.0.0.0/0
         
-2. AMI
+2. AMI: https://docs.aws.amazon.com/cli/latest/reference/iam/
 
+User should have *IAMFullAccess*.
+
+        aws iam help
+  
+        aws iam create-user --user-name MyUser
         
+        aws iam create-group --group-name MyIamGroup
+        
+        aws iam add-user-to-group --user-name MyUser --group-name MyIamGroup
+        
+        aws iam get-group --group-name MyIamGroup
+        
+        aws iam list-user-policies --user-name MyUser
+        
+        aws iam create-login-profile --user-name MyUser --password My!User1Login8P@ssword
+        
+        aws iam attach-user-policy --policy-arn arn:aws:iam::aws:policy/AmazonEC2FullAccess --user-name MyUser
+        
+        aws iam detach-user-policy --user-name MyUser --policy-arn arn:aws:iam::aws:policy/AmazonEC2FullAccess
+        
+        aws iam create-access-key --user-name MyUser
+        
+        aws iam delete-access-key --user-name MyUser --access-key-id AK******WTTQ
+        
+        aws iam remove-user-from-group --group-name MyIamGroup --user-name MyUser
+        
+        aws iam delete-group --group-name MyIamGroup
+        
+        aws iam delete-user --user-name MyUser
         
 2. Create LB
 
