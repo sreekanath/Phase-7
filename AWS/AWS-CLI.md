@@ -95,7 +95,7 @@ User should have *AmazonEC2FullAccess*.
         
         aws ec2 authorize-security-group-ingress --group-id sg-0f6d2f1f102155f13 --protocol tcp --port 22 --cidr 0.0.0.0/0
         
-2. AMI: https://docs.aws.amazon.com/cli/latest/reference/iam/
+2. IAM: https://docs.aws.amazon.com/cli/latest/reference/iam/
 
 User should have *IAMFullAccess*.
 
