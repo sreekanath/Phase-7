@@ -43,6 +43,10 @@ User should have *AmazonEC2FullAccess*.
         aws ec2 run-instances --image-id ami-026b6eb3e6c3027e8 --count 1 --instance-type t2.micro --key-name aws-2 --security-group-ids sg-068402cee3c9b7f81
         
         aws ec2 create-tags --resources i-07f5dc2f7b4a019f0 --tags Key=Name,Value=MyInstance
+        
+        aws ec2 create-image --instance-id i-07f5dc2f7b4a019f0 --name "My server" --description "An AMI for my server"
+        
+        aws ec2 deregister-image --image-id ami-026b6eb3e6c3025435
               
         aws ec2 describe-instances --filters "Name=tag:Name,Values=MyInstance"
         
