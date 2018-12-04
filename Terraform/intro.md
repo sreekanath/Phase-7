@@ -80,7 +80,94 @@ Refer:
         rerun this command to reinitialize your working directory. If you forget, other
         commands will detect it and remind you to do so if necessary.
 
+    3.5. terraform apply
+    
+        root@ip-172-31-87-186:~# terraform apply
 
+                An execution plan has been generated and is shown below.
+                Resource actions are indicated with the following symbols:
+                  + create
+
+                Terraform will perform the following actions:
+
+                  + aws_instance.example
+                      id:                           <computed>
+                      ami:                          "ami-0ac019f4fcb7cb7e6"
+                      arn:                          <computed>
+                      associate_public_ip_address:  <computed>
+                      availability_zone:            <computed>
+                      cpu_core_count:               <computed>
+                      cpu_threads_per_core:         <computed>
+                      ebs_block_device.#:           <computed>
+                      ephemeral_block_device.#:     <computed>
+                      get_password_data:            "false"
+                      instance_state:               <computed>
+                      instance_type:                "t2.micro"
+                      ipv6_address_count:           <computed>
+                      ipv6_addresses.#:             <computed>
+                      key_name:                     <computed>
+                      network_interface.#:          <computed>
+                      network_interface_id:         <computed>
+                      password_data:                <computed>
+                      placement_group:              <computed>
+                      primary_network_interface_id: <computed>
+                      private_dns:                  <computed>
+                      private_ip:                   <computed>
+                      public_dns:                   <computed>
+                      public_ip:                    <computed>
+                      root_block_device.#:          <computed>
+                      security_groups.#:            <computed>
+                      source_dest_check:            "true"
+                      subnet_id:                    <computed>
+                      tenancy:                      <computed>
+                      volume_tags.%:                <computed>
+                      vpc_security_group_ids.#:     <computed>
+
+                Plan: 1 to add, 0 to change, 0 to destroy.
+
+                Do you want to perform these actions?
+                  Terraform will perform the actions described above.
+                  Only 'yes' will be accepted to approve.
+
+                  Enter a value: yes
+
+                aws_instance.example: Creating...
+                  ami:                          "" => "ami-0ac019f4fcb7cb7e6"
+                  arn:                          "" => "<computed>"
+                  associate_public_ip_address:  "" => "<computed>"
+                  availability_zone:            "" => "<computed>"
+                  cpu_core_count:               "" => "<computed>"
+                  cpu_threads_per_core:         "" => "<computed>"
+                  ebs_block_device.#:           "" => "<computed>"
+                  ephemeral_block_device.#:     "" => "<computed>"
+                  get_password_data:            "" => "false"
+                  instance_state:               "" => "<computed>"
+                  instance_type:                "" => "t2.micro"
+                  ipv6_address_count:           "" => "<computed>"
+                  ipv6_addresses.#:             "" => "<computed>"
+                  key_name:                     "" => "<computed>"
+                  network_interface.#:          "" => "<computed>"
+                  network_interface_id:         "" => "<computed>"
+                  password_data:                "" => "<computed>"
+                  placement_group:              "" => "<computed>"
+                  primary_network_interface_id: "" => "<computed>"
+                  private_dns:                  "" => "<computed>"
+                  private_ip:                   "" => "<computed>"
+                  public_dns:                   "" => "<computed>"
+                  public_ip:                    "" => "<computed>"
+                  root_block_device.#:          "" => "<computed>"
+                  security_groups.#:            "" => "<computed>"
+                  source_dest_check:            "" => "true"
+                  subnet_id:                    "" => "<computed>"
+                  tenancy:                      "" => "<computed>"
+                  volume_tags.%:                "" => "<computed>"
+                  vpc_security_group_ids.#:     "" => "<computed>"
+                aws_instance.example: Still creating... (10s elapsed)
+                aws_instance.example: Still creating... (20s elapsed)
+                aws_instance.example: Creation complete after 21s (ID: i-01f5cacffc16e33b7)
+
+                Apply complete! Resources: 1 added, 0 changed, 0 destroyed.
+                root@ip-172-31-87-186:~#
 
 
 
