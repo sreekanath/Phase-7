@@ -37,7 +37,7 @@ Multiple ways to pass the arguments/vlues:
         export TF_VAR_instance_ami=ami-0ac019f4fcb7cb7e6
         export TF_VAR_instance_type=t2.micro
   
-  * UI Input: 
+  * UI Input: If you execute terraform apply with certain variables unspecified, Terraform will ask you to input their values interactively. (Note: UI Input is only supported for string variables. List and map variables must be populated via one of the other mechanisms.)
   
         root@ip-172-31-45-245:~# terraform apply
         var.instance_ami
