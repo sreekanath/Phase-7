@@ -1,6 +1,6 @@
 ### Provision
 
- * terraform script:
+ * Terraform script:
   
         provider "aws" {
            region     = "us-east-1"
@@ -108,3 +108,39 @@
         aws_instance.example: Creation complete after 31s (ID: i-0ae234031693a0a13)
 
         Apply complete! Resources: 1 added, 0 changed, 0 destroyed.
+
+    ![image](https://user-images.githubusercontent.com/24622526/49492923-22e90900-f880-11e8-812e-a251f9939638.png)
+
+    ![image](https://user-images.githubusercontent.com/24622526/49492956-41e79b00-f880-11e8-84c2-67f20742fc2e.png)
+
+
+### Multiple Provisioners
+
+  * Terraform script:
+
+        provider "aws" {
+           region     = "us-east-1"
+        }
+
+        resource "aws_instance" "example" {
+          ami           = "ami-0ac019f4fcb7cb7e6"
+          instance_type = "t2.micro"
+
+          provisioner "local-exec" {
+            command = "echo ${aws_instance.example.public_ip} > public_ip_address.txt"
+          }
+
+          provisioner "local-exec" {
+            command = "echo ${self.private_ip} > private_ip_address.txt"
+          }
+
+        }
+  
+  * Output:
+  
+    ![image](https://user-images.githubusercontent.com/24622526/49493256-7a3ba900-f881-11e8-850c-4be951b7cbbc.png)
+
+    ![image](https://user-images.githubusercontent.com/24622526/49493266-8a538880-f881-11e8-977f-e5bb4e6884c8.png)
+
+
+
