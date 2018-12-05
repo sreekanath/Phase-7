@@ -71,3 +71,32 @@
         aws_eip.ip: Creation complete after 0s (ID: eipalloc-01b100419491dcbbe)
 
         Apply complete! Resources: 2 added, 0 changed, 0 destroyed.
+
+### Implicit and Explicit Dependencies
+
+  * **Implicit Dependencies**: The above one is the best example, By studying the resource attributes used in interpolation expressions, Terraform can automatically infer when one resource depends on another. In the example above, the expression ${aws_instance.example.id} creates an implicit dependency on the aws_instance named example. Terraform uses this dependency information to determine the correct order in which to create the different resources. In the example above, Terraform knows that the aws_instance must be created before the aws_eip.
+  
+  * **Explicit Dependencies**: Sometimes there are dependencies between resources that are not visible to Terraform. The depends_on argument is accepted by any resource and accepts a list of resources to create explicit dependencies for. 
+For example, perhaps an application we will run on our EC2 instance expects to use a specific Amazon S3 bucket, but that dependency is configured inside the application code and thus not visible to Terraform. In that case, we can use depends_on to explicitly declare the dependency:
+
+        # New resource for the S3 bucket our application will use.
+        resource "aws_s3_bucket" "example" {
+          # NOTE: S3 bucket names must be unique across _all_ AWS accounts, so
+          # this name must be changed before applying this example to avoid naming
+          # conflicts.
+          bucket = "terraform-getting-started-guide"
+          acl    = "private"
+        }
+
+        # Change the aws_instance we declared earlier to now include "depends_on"
+        resource "aws_instance" "example" {
+          ami           = "ami-2757f631"
+          instance_type = "t2.micro"
+
+          # Tells Terraform that this EC2 instance must be created only after the
+          # S3 bucket has been created.
+          depends_on = ["aws_s3_bucket.example"]
+        }
+
+
+
