@@ -1,6 +1,6 @@
 ### Provision
 
-  terraform script:
+ * terraform script:
   
     provider "aws" {
        region     = "us-east-1"
@@ -17,6 +17,8 @@
 
     }
 
+
+ * Output:
 
     root@ip-172-31-45-245:~# terraform apply
 
