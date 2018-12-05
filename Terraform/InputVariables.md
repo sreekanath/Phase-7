@@ -5,9 +5,7 @@
     variable "region" {
       default = "us-east-1"
     }
-    variable "instance_ami" {
-      default = "ami-0ac019f4fcb7cb7e6"
-    }
+    variable "instance_ami" {}
     variable "instance_type" {}
     
  cat example.tf
@@ -21,7 +19,37 @@
       instance_type = "${var.instance_type}"
     }
     
- Command-line flags: terraform apply -var 'instance_type=t2.micro' 
+Multiple ways to pass the arguments/vlues:
+    
+ * Command-line flags: terraform apply -var 'instance_type=t2.micro' -var 'instance_ami=ami-0ac019f4fcb7cb7e6'
+ 
+ * From a file: 
+ 
+   cat instance.tfvars
+
+       instance_type="t2.micro"
+       instance_ami="ami-0ac019f4fcb7cb7e6"
+   
+   command: `terraform apply -var-file="instance.tfvars"`
+   
+  * From environment variables: Terraform will read environment variables in the form of TF_VAR_name to find the value for a variable. For example, the TF_VAR_access_key variable can be set to set the access_key variable. (Note: Environment variables can only populate string-type variables. List and map type variables must be populated via one of the other mechanisms.)
+  
+        export TF_VAR_instance_ami=ami-0ac019f4fcb7cb7e6
+        export TF_VAR_instance_type=t2.micro
+  
+  * UI Input: 
+  
+        root@ip-172-31-45-245:~# terraform apply
+        var.instance_ami
+          Enter a value: ami-0ac019f4fcb7cb7e6
+
+        var.instance_type
+          Enter a value: t2.micro
+
+   
+   
+   
+    
 
 
    
