@@ -16,7 +16,7 @@
           value = "${aws_instance.example.public_ip}"
         }
       
- * run the command: `terraform apply`
+ * run the command: `terraform apply` - end of the execution you will an output of the varilable 'publicip'
  
   ![image](https://user-images.githubusercontent.com/24622526/49496891-07382f80-f88d-11e8-8d85-b8807558b917.png)
   
