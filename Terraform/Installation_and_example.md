@@ -20,7 +20,13 @@ Refer:
 
         mv terraform /var/lib/terraform
         
-        export PATH="$PATH:/var/lib/"
+        export PATH="$PATH:/var/lib/"  
+        
+                (or) 
+        PATH="$PATH:/var/lib/" add this path in to the file ~/.profile or ~/.bash_profile
+
+        source ~/.profile or source ~/.bash_profile
+                
         
         terraform -version
 
@@ -80,6 +86,8 @@ Refer:
         If you ever set or change modules or backend configuration for Terraform,
         rerun this command to reinitialize your working directory. If you forget, other
         commands will detect it and remind you to do so if necessary.
+
+    * note: Run the command to see the provider plugin details `terraform -version`.
 
     3.5. terraform apply
     
