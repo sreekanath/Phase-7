@@ -18,7 +18,7 @@ Example with ELB
 
 5. Fill the details as shown in above images, and choose other default values.
 
-6. Click on **Create Distribution**, this might take 5 to 10 mins to complete.
+6. Click on **Create Distribution**, this might take 5 to 10 mins to complete. CloudFront sends your distribution's configuration (but not your content) to all of its edge locations—collections of servers in geographically dispersed data centers where CloudFront caches copies of your objects.
 
 ![image](https://user-images.githubusercontent.com/24622526/50067087-2e73f280-01e5-11e9-92eb-991ff2d3f3da.png)
 
