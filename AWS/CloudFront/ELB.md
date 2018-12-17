@@ -1,6 +1,6 @@
 Example with ELB
 
-1. Image(AMI) where DevOpsWebApp deployed to tomcat. Refer to install tomcat: https://github.com/DevOpsPlatform/Phase-1/blob/master/tomcat9-setup-on-ubuntu.md
+1. Create Image(AMI) where DevOpsWebApp can be deployed to tomcat. Refer to install tomcat: https://github.com/DevOpsPlatform/Phase-1/blob/master/tomcat9-setup-on-ubuntu.md
 
 2. Create two instances with same AMI.
 
@@ -18,7 +18,9 @@ Example with ELB
 
 5. Fill the details as shown in above images, and choose other default values.
 
-6. Create **CloudFront Distributions**, this might take 5 to 10 mins.
+6. Click on **Create Distribution**, this might take 5 to 10 mins to complete.
+
+![image](https://user-images.githubusercontent.com/24622526/50067087-2e73f280-01e5-11e9-92eb-991ff2d3f3da.png)
 
 7. Once the status is **Deployed**, then copy the domain name and launch it in any browser any where.
 
