@@ -30,6 +30,9 @@ Refer: https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Introd
 
 ![image](https://user-images.githubusercontent.com/24622526/50067635-c672db80-01e7-11e9-85c3-417a99d21e6d.png)
 
-8. First **Disbale** the distribution, and then delete once the status is **Deployed**.
+8. First **Disbale** the distribution, and then delete once the status is **Deployed**. This will take around 10 to 15 mins.
+
+![image](https://user-images.githubusercontent.com/24622526/50067653-e4d8d700-01e7-11e9-891a-5eba55d5cd19.png)
+
 
 
