@@ -26,6 +26,10 @@ Refer: https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Introd
 
 7. CloudFront assigns a domain name to your new distribution that you can see in the CloudFront console. Once the status is **Deployed**, then copy the domain name and launch it in any browser any where.
 
-![image](https://user-images.githubusercontent.com/24622526/50066453-d8518000-01e1-11e9-8277-77118f01a1ef.png)
+![image](https://user-images.githubusercontent.com/24622526/50067616-aba06700-01e7-11e9-8187-86389d7f5344.png)
+
+![image](https://user-images.githubusercontent.com/24622526/50067635-c672db80-01e7-11e9-85c3-417a99d21e6d.png)
 
 8. First **Disbale** the distribution, and then delete once the status is **Deployed**.
+
+
