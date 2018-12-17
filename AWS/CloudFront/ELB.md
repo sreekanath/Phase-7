@@ -1,4 +1,6 @@
-Example with ELB
+Refer: https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Introduction.html
+
+### Example with ELB
 
 1. Create Image(AMI) where DevOpsWebApp can be deployed to tomcat. Refer to install tomcat: https://github.com/DevOpsPlatform/Phase-1/blob/master/tomcat9-setup-on-ubuntu.md
 
