@@ -22,9 +22,8 @@ Example with ELB
 
 ![image](https://user-images.githubusercontent.com/24622526/50067087-2e73f280-01e5-11e9-92eb-991ff2d3f3da.png)
 
-7. Once the status is **Deployed**, then copy the domain name and launch it in any browser any where.
+7. CloudFront assigns a domain name to your new distribution that you can see in the CloudFront console. Once the status is **Deployed**, then copy the domain name and launch it in any browser any where.
 
 ![image](https://user-images.githubusercontent.com/24622526/50066453-d8518000-01e1-11e9-8277-77118f01a1ef.png)
-
 
 8. First **Disbale** the distribution, and then delete once the status is **Deployed**.
