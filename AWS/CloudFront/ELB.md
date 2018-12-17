@@ -1,4 +1,3 @@
-Refer: https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Introduction.html
 
 ### Example with ELB
 
