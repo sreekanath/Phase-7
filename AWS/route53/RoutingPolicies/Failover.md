@@ -1,3 +1,5 @@
+#Failover
+
 1. Create two EC2 ubuntu instances.
 
 2. Install apache on both the instances.
