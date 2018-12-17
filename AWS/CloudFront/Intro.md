@@ -1,5 +1,7 @@
 Refer: Refer: https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Introduction.html
 
+https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html
+
 ![image](https://user-images.githubusercontent.com/24622526/50067298-5dd72f00-01e6-11e9-929c-a20bf168fb91.png)
 
 #### How You Configure CloudFront to Deliver Your Content
