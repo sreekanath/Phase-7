@@ -1,5 +1,5 @@
 
-### Example with ELB
+### Example with ELB (Dymanic Web content)
 
 1. Create Image(AMI) where DevOpsWebApp can be deployed to tomcat. Refer to install tomcat: https://github.com/DevOpsPlatform/Phase-1/blob/master/tomcat9-setup-on-ubuntu.md
 
