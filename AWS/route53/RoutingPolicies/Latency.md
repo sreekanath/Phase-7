@@ -29,7 +29,7 @@
    
    ![image](https://user-images.githubusercontent.com/24622526/50133446-9a239180-02b1-11e9-8907-415f5d5cf00f.png)
 
-4. 3. Launch the URL in any browser in the machine which is connected to Ohio region. (for this, create a windows machine in Ohio region and connect to the widnows and then launch the below url in the browser.
+4. Launch the URL in any browser in the machine which is connected to Ohio region. (for this, create a windows machine in Ohio region and connect to the widnows and then launch the below url in the browser.
 
    http://apache.svnreddydevops.com/
    
