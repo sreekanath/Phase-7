@@ -1,7 +1,7 @@
 ### Latency routing policy 
 
-    – Use when you have resources in multiple AWS Regions and you want to route traffic to the region that provides the best latency.
-    - Refer: Latency routing policy – Use when you have resources in multiple AWS Regions and you want to route traffic to the region that provides the best latency.
+  - Use when you have resources in multiple AWS Regions and you want to route traffic to the region that provides the best latency.
+  - Refer: https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html#routing-policy-latency
     
 1. Create two ubuntu instances, one in Mumbai region & another one is in Ohio region.
 
