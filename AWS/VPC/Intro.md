@@ -26,5 +26,8 @@ Refer: https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html
 
 * To protect the AWS resources in each subnet, you can use multiple layers of security, including security groups and network access control lists (ACL).
 
+* If a subnet's traffic is routed to an internet gateway, the subnet is known as a public subnet. 
+
+* 
 
 
