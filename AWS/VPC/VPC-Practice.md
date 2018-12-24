@@ -88,6 +88,8 @@ This is called public subnet.
 
     * Update the security group of private-in-1, as to connect only public-in-2 - port 80 http
     
+* Practice with simple java web application: https://github.com/venkatasykam/DevOpsWebApp/tree/jdbc-vpc
+
 ---
 
 **when we should go for NAT?**
@@ -109,3 +111,4 @@ To delete the entire network, follow the below steps,
 * Delete Elastic IPs
 
 * Delete VPC. (It will automatcally removed SG, IGW, RT, Subnets etc)
+
