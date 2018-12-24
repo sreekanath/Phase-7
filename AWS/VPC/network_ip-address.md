@@ -18,12 +18,12 @@
 
    * Internet Protocol version 6 (IPv6) defines an IP address as a 128-bit number.
 
-   * IP addresses are usually written and displayed in human-readable notations, such as 172.16.254.1 in IPv4, and 2001:db8:0:1234:0:567:8:1 in IPv6. 
+   * IP addresses are usually written and displayed in human-readable notations, such as 172.16.254.1 in IPv4, and 2001:db8:0:123:0:567:8:1 in IPv6. 
 
    * IP addresses falls into two types:
 
-	 * Classfull IP addressing is a legacy scheme which divides the whole IP address pools into 5 distinct classes—A, B, C, D and E.
-	 * Classless IP addressing has an arbitrary length of the prefixes. (for more details, see  [CIDR wiki](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
+	 * Classfull IP addressing is a legacy scheme which divides the whole IP address pools into 5 distinct classes—A, B, C, D and E.(for more details, see [Classfull wiki](https://en.wikipedia.org/wiki/Classful_network) ).
+	 * Classless IP addressing has an arbitrary length of the prefixes. (for more details, see  [CIDR wiki](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing) ).
 
    * Classless Inter-Domain Routing (CIDR) is a method for allocating IP addresses.
 
