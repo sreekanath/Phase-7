@@ -55,6 +55,8 @@ This is called public subnet.
 
 **Try this**: Run the command again: apt-get update -y && apt-get install nginx -y (or)  yum update -y && yum install nginx -y
 
+![image](https://user-images.githubusercontent.com/24622526/50402514-40ddc580-07bd-11e9-92c2-3583f3395798.png)
+
 **Example:**
 
 * Create 2 public instances under public Subnets 
