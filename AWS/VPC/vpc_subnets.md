@@ -54,6 +54,16 @@ Refer: https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html
 
 * An internet gateway serves two purposes: to provide a target in your VPC route tables for internet-routable traffic, and to perform network address translation (NAT) for instances that have been assigned public IPv4 addresses.
 
+### NAT:
+
+* You can use a NAT device to enable instances in a private subnet to connect to the internet (for example, for software updates) or other AWS services, but prevent the internet from initiating connections with the instances.
+
+* A NAT device forwards traffic from the instances in the private subnet to the internet or other AWS services, and then sends the response back to the instances. 
+
+* When traffic goes to the internet, the source IPv4 address is replaced with the NAT device’s address and similarly, when the response traffic goes to those instances, the NAT device translates the address back to those instances’ private IPv4 addresses.
+
+* NAT devices are not supported for IPv6 traffic—use an egress-only Internet gateway instead. 
+
 ### Amazon VPC Limits:
 
 * Refer: https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html
