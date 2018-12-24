@@ -18,14 +18,14 @@
 
 		After you created the Subnet --> choose subnet --> Actions --> Modify auto-assign IP settings --> Enable Auto-assign IPv4.
 
-Try: Create an instance by specifying the above details. and try to connect.
+**Try this**: Create an instance by specifying the above details. and try to connect.
 
 #### Step-3: Create IGW
 
 		attach to VPC (after IGW created)
 		Attach to Route Table (Edit Routes)
 
-Try: Try to connect to EC2 instance now.
+**Try this**: Try to connect to EC2 instance now.
 
 This is called public subnet.
 
@@ -38,14 +38,14 @@ This is called public subnet.
 		Create RT
     
 		Go to route table, Subnet Associate - choose private subnet
+		
+**Try this and observe**:
 
-Try: 
-
-	1. Create an private instance by specifying the above details. and try to connect directly from your terminal (Gitbash or putty etc).
-	2. Connect to public instance and copy the pem key into your connected public instance and give permissions on pem file(chmod 400 file.pem), and then try to connect to private instance.
-	3. apt-get update -y && apt-get install nginx -y (or)  yum update -y && yum install nginx -y
-
-	It will not download anything from Internet.. if you want download anything from internet.. go for NAT.
+   1. Create an private instance by specifying the above details. and try to connect directly from your terminal (Gitbash or putty etc).
+   2. Connect to public instance and copy the pem key into your connected public instance and give permissions on pem file(chmod 400 file.pem), and then try to connect to private instance.
+   3. apt-get update -y && apt-get install nginx -y (or)  yum update -y && yum install nginx -y
+   
+   It will not download anything from Internet.. if you want download anything from internet.. go for NAT.
 
 ### Step-6: Create NAT Gateway/instance.
 
@@ -53,9 +53,9 @@ Try:
 	Create Elastic IP
 	Edit Route Tables to add NAT Gateway to Private Subnet.
 
-Try: Run the command again: apt-get update -y && apt-get install nginx -y (or)  yum update -y && yum install nginx -y
+**Try this**: Run the command again: apt-get update -y && apt-get install nginx -y (or)  yum update -y && yum install nginx -y
 
-Example:
+**Example:**
 
 * Create 2 public instances under public Subnets 
 
@@ -88,11 +88,22 @@ Example:
     
 ---
 
-when we should go for NAT?
+**when we should go for NAT?**
 
-	* connect to private-in-1 (from public-in-1 or public-in-2), try to run the command: apt-get update- y (or) apt-get install nginx -y
+  * connect to private-in-1 (from public-in-1 or public-in-2), try to run the command: apt-get update- y (or) apt-get install nginx -y
   
   * Nothing will be connected to internet, download from internet as this is private instance(belongs to private subnet) and traffic controlled by private route table.
   
   * NAT Gateways will allow only one way traffic, i.e., private instance can connect to the internet but, internet can't connect to the private instance.
   
+**Note that..**
+
+To delete the entire network, follow the below steps,
+
+* Delete EC2 instances.
+
+* Delete NAT
+
+* Delete Elastic IPs
+
+* Delete VPC. (It will automatcally removed SG, IGW, RT, Subnets etc)
