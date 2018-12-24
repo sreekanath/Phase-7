@@ -64,6 +64,8 @@ Refer: https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html
 
 * NAT devices are not supported for IPv6 traffic—use an egress-only Internet gateway instead. 
 
+* AWS offers two kinds of NAT devices—a NAT gateway or a NAT instance. We recommend NAT gateways, as they provide better availability and bandwidth over NAT instances.
+
 ### Amazon VPC Limits:
 
 * Refer: https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html
