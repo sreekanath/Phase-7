@@ -28,6 +28,6 @@ Refer: https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html
 
 * If a subnet's traffic is routed to an internet gateway, the subnet is known as a public subnet. 
 
-* 
+Refer: https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html
 
 
