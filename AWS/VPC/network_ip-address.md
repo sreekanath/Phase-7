@@ -23,7 +23,7 @@
    * IP addresses falls into two types:
 
 	 * Classfull IP addressing is a legacy scheme which divides the whole IP address pools into 5 distinct classes—A, B, C, D and E.
-	 * Classless IP addressing has an arbitrary length of the prefixes.
+	 * Classless IP addressing has an arbitrary length of the prefixes. (for more details, see  [CIDR wiki](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
 
    * Classless Inter-Domain Routing (CIDR) is a method for allocating IP addresses.
 
