@@ -30,3 +30,20 @@
 	     172.31.0.0/20 = 2^(32-20) = 2^12 = 4096
   
              https://www.ipaddressguide.com/cidr
+
+##### Public IP Address
+
+   * A public IP address is an IP address that can be accessed over the Internet. Like postal address used to deliver a postal mail to your home, a public IP address is the globally unique IP address assigned to a computing device. 
+   
+##### Private IP Address
+
+   * Private IP address, is used to assign computers within your private space without letting them directly expose to the Internet. For example, if you have multiple computers within your home you may want to use private IP addresses to address each computer within your home.
+   * Internet Assigned Numbers Authority (IANA) is the organization responsible for registering IP address ranges to organizations and Internet Service Providers (ISPs). To allow organizations to freely assign private IP addresses, the Network Information Center (InterNIC) has reserved certain address blocks for private use. The following IP blocks are reserved for private IP addresses.
+   
+   | Class | Starting IP Address | Ending IP Address | Number of IPs |
+   | --- | --- | --- | --- |
+   | A | 10.0.0.0 | 10.255.255.255 | 16,777,216 |
+   | B | 172.16.0.0 | 172.31.255.255 | 1,048,576 |
+   | C | 192.168.0.0 | 192.168.255.255 | 65,536 |
+
+   * Refer: https://en.wikipedia.org/wiki/Private_network
