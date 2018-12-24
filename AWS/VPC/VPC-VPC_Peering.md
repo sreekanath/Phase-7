@@ -4,6 +4,12 @@ https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html
 
 https://aws.amazon.com/vpc/pricing/
 
+https://docs.aws.amazon.com/vpc/latest/peering/what-is-vpc-peering.html
+
+https://docs.aws.amazon.com/vpc/latest/peering/create-vpc-peering-connection.html#create-vpc-peering-connection-local
+
+https://docs.aws.amazon.com/vpc/latest/peering/vpc-peering-routing.html
+
 VPC to VPC peering
 
 1. peering connection b/w two different VPCs but same regions, same AWS account.
