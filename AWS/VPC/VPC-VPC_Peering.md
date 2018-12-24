@@ -1,32 +1,32 @@
-* VPC to VPC - peer connection
+#### VPC to VPC - peer connection
 
-	https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html
+https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html
 
-	https://aws.amazon.com/vpc/pricing/
+https://aws.amazon.com/vpc/pricing/
 
-    sudo -i
-    hostname mu-public-instance
-    echo "mu-public-instance" > /etc/hostname
-    exit
-    exit
+	    sudo -i
+	    hostname mu-public-instance
+	    echo "mu-public-instance" > /etc/hostname
+	    exit
+	    exit
 
-    sudo -i
-    hostname mu-private-instance
-    echo "mu-private-instance" > /etc/hostname
-    exit
-    exit
+	    sudo -i
+	    hostname mu-private-instance
+	    echo "mu-private-instance" > /etc/hostname
+	    exit
+	    exit
 
-    sudo -i
-    hostname nv-public-instance
-    echo "nv-public-instance" > /etc/hostname
-    exit
-    exit
+	    sudo -i
+	    hostname nv-public-instance
+	    echo "nv-public-instance" > /etc/hostname
+	    exit
+	    exit
 
-    sudo -i
-    hostname nv-private-instance
-    echo "nv-private-instance" > /etc/hostname
-    exit
-    exit
+	    sudo -i
+	    hostname nv-private-instance
+	    echo "nv-private-instance" > /etc/hostname
+	    exit
+	    exit
 
 Example-1: Scenario is, I want to connect from MU public instance to NV private instance.
 
