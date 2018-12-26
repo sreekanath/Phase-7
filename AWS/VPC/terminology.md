@@ -38,3 +38,5 @@
 * Region, Availability Zones
 
 * Network ACLs
+
+* Inbound and outbound traffic
