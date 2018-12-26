@@ -66,3 +66,5 @@
    * When  a computer is assigned a private IP address, the local devices see this computer via it's private IP address. However, the devices residing outside of your local network cannot directly communicate via the private IP address, but uses your router's public IP address to communicate. To allow direct access to a local device which is assigned a private IP address, a Network Address Translator (NAT) should be used.
   
    * Refer: https://en.wikipedia.org/wiki/Private_network
+   
+   * Refer: https://en.wikipedia.org/wiki/Reserved_IP_addresses
