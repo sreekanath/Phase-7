@@ -18,6 +18,10 @@ Refer: https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html
 
 ### Subnets:
 
+* A subnet is a logical partition of an IP network into multiple, smaller network segments. 
+
+* It is typically used to subdivide large networks into smaller, more efficient subnetworks.
+
 * A subnet is a range of IP addresses in your VPC. You can launch AWS resources into a specified subnet.
 
 * Use a public subnet for resources that must be connected to the internet.
