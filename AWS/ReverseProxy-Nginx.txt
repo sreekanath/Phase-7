@@ -71,3 +71,38 @@ launch the below URLs in any browser:
 
 3. http://3.83.103.108:8080/devops/ - DevOps web application homepage
 
+------------------------------------------------------------------------
+
+
+If multiple applications are running on the another server, give the server IP address instead of localhost.
+
+
+root@ip-172-31-83-71:~# cat /etc/nginx/conf.d/tomcat.conf
+server {
+  listen 80;
+  listen [::]:80;
+
+    root /usr/share/nginx/html;
+
+    index index.html index.htm;
+
+  server_name 3.83.103.108;
+
+  location / {
+        try_files $uri $uri/ =404;
+  }
+
+  location /tomcat/ {
+       proxy_set_header X-Real-IP  $remote_addr;
+       proxy_set_header X-Forwarded-For $remote_addr;
+       proxy_pass http://34.201.40.84:8080/;
+  }
+
+  location /devops/ {
+       proxy_set_header X-Real-IP  $remote_addr;
+       proxy_set_header X-Forwarded-For $remote_addr;
+       proxy_pass http://34.201.40.84:8080/DevOpsWebApp-1.0.0/;
+  }
+
+}
+
