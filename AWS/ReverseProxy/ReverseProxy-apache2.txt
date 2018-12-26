@@ -1,3 +1,8 @@
+ Refer: https://www.digitalocean.com/community/questions/how-to-tie-domain-name-with-application-running-on-tomcat
+ 
+ 
+ Assume if tomcat is running on an instance and any web app deployed into tomcat,
+ 
  sudo apt-get install apache2 -y
  
  sudo a2enmod proxy
