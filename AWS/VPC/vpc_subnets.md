@@ -78,7 +78,7 @@ Refer: https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html
 
     * NAT instance enable instances in the private subnet to initiate outbound traffic to the Internet, but prevent the instances from receiving inbound traffic initiated by someone on the Internet.
 
-Note: NAT Instance is a legacy, You can use NAT Gateway.
+Note: NAT Instance is a legacy, You can use NAT Gateway. Refer: https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-comparison.html
 
 ### Security
 
