@@ -1,0 +1,30 @@
+ sudo apt-get install apache2 -y
+ 
+ sudo a2enmod proxy
+ 
+ sudo a2enmod proxy_http
+ 
+ service apache2 restart (or) systemctl restart apache2
+ 
+ ll /etc/apache2/sites-available/
+ 
+ vi /etc/apache2/sites-available/tomcat.conf 
+ 
+ 
+ <VirtualHost *:80>
+
+        ServerName 34.201.40.84
+
+        ProxyRequests On
+
+        ProxyPass / http://localhost:8080/DevOpsWebApp-1.0.0/
+
+        ProxyPassReverse / http://localhost:8080/DevOpsWebApp-1.0.0/
+
+</VirtualHost>
+
+sudo a2ensite tomcat
+
+systemctl reload apache2
+
+launch 34.201.40.84 in any browser.
