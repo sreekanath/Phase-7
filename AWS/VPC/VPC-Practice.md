@@ -109,6 +109,9 @@ This is called public subnet.
 	* Create EC2 instance into **private** subnet. This instance will not have any public ip as we disabled in subnet settings.
 	* Try to connect to public istance (It will not connect with private IP address)
 	* Create ElasticIP and associate with public ec2 instance. Try to connect now with elastic IP, **it will NOT connect** even with public IPv4 address which is elastic IP.
+	* If you really really wants to connect to your private instance, two ways
+		* connect from your public instance.
+		* make your private instance as public instance. (For this, associate the private subnet with public route table OR update the private route table rutes with IGW, remove NAT gateway).
 
 ---
 
