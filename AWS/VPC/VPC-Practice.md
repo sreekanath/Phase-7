@@ -90,6 +90,20 @@ This is called public subnet.
     
 * Practice with simple java web application: https://github.com/venkatasykam/DevOpsWebApp/tree/jdbc-vpc
 
+**Try this**:
+
+* Disable the option "auto assign public IPv4 address" for public subnet.
+
+	* Create EC2 instance into **public** subnet. This instance will not have any public ip as we disabled in subnet settings.
+	* Try to connect to public istance (It will not connect with private IP address)
+	* Create ElasticIP and associate with public ec2 instance. Try to connect now with elastic IP, **it will connect** with public IPv4 address which is elastic IP.
+
+* Make sure the option is disabled "auto assign public IPv4 address" for private subnet.
+
+	* Create EC2 instance into **private** subnet. This instance will not have any public ip as we disabled in subnet settings.
+	* Try to connect to public istance (It will not connect with private IP address)
+	* Create ElasticIP and associate with public ec2 instance. Try to connect now with elastic IP, **it will NOT connect** even with public IPv4 address which is elastic IP.
+
 ---
 
 **when we should go for NAT?**
