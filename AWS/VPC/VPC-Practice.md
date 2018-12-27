@@ -1,4 +1,10 @@
-#### VPC:
+## VPC Practice:
+
+* Refer:
+
+	* https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html
+
+	* https://aws.amazon.com/vpc/pricing/
 
 #### Step-1: Create VPC
 
