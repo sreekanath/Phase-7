@@ -94,7 +94,9 @@ This is called public subnet.
 
     * Update the security group of private-in-1, as to connect only public-in-2 - port 80 http
     
-* Practice with simple java web application: https://github.com/venkatasykam/DevOpsWebApp/tree/jdbc-vpc
+* Practice with simple java web application(Public EC2 instance and private RDS mysql db server): https://github.com/venkatasykam/DevOpsWebApp/tree/jdbc-vpc
+
+* Practice with simple java web application(Public EC2 instance for web app & private EC2 instance for mysql db server) https://github.com/venkatasykam/DevOpsWebApp/tree/jdbc-vpc-example-2
 
 **Try this**:
 
