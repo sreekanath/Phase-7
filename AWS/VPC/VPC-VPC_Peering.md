@@ -104,3 +104,15 @@ Scenario is, I want to connect from MU public instance to NV private instance. (
 1. try to connect from mu private instance to nv private instance. (Its possible)
 
 2. try to connect from nv public to mu private instance. (Its possible, if you update the RT rules/settings)
+
+**Delete**
+
+1. peering connection (delete from any one of the region)
+
+2. instances (in both the regions)
+
+3. NAT Gateway
+
+4. Elastic IPs
+
+5. VPC (It will remove Security Groups, RT, Subnets, IGW, etc)
