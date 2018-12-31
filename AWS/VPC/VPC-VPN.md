@@ -5,7 +5,7 @@
   
 			1 VPC, 2 subnets(1 public, 1 private), 2 RT(1 private, 1 public), IGW for public RT, NAT for private RT
 	
-#### Step-2: Create a server (EC2 Instance) using the AMI OpenVPN Server (from the AWS Market Place).
+#### Step-2: Create a server (public EC2 Instance into your VPC) using the AMI OpenVPN Server (from the AWS Market Place).
 
 			Create Elastic IP and assign to OpenVPN server.
       
@@ -134,7 +134,7 @@
 			Retype new UNIX password:
 			passwd: password updated successfully
 
-#### Step-4: As mentioned in the above output, connect to https://52.4.90.2:943/admin
+#### Step-4: As mentioned in the above output, connect to https://52.4.90.2:943/admin as an admin.
 
 			Deafult admin username: openvpn
 			Password you set in the above steps.
@@ -143,18 +143,27 @@
 
 			Create the new admin/normal Users under "User Permissions"
 
-#### Step-5: Update the inbound rules with Open VPN Server SG or IP address. PublicIP/32.
+#### Step-5: Launch public EC2 instance.
+
+   * Create a new security group while launch the EC2 instance. 
+   * Open the port 22 and update the inbound rules with **Open VPN Server's SG** or IP address(i.e, PublicIP/32).
+   * Try to connect to this public EC2 instance. (You can't able to connect to the EC2 instance at this time).
 
 #### Step-6: Normal users of VPN can connect to https://52.4.90.2:943/
 		
-      Where as admins can connect to https://52.4.90.2:943/admin
+      (Where as admins can connect to https://52.4.90.2:943/admin)
 
-			Once the normal user logged into VPN site, there are few links to download VPN Clients, so that you can directly login to VPN Server through VPN client.
+   * Once the normal user logged into VPN site, there are few links to download VPN Clients, so that you can directly login to VPN Server through VPN client.
 
-			Before you connect to VPN server (login to the VPN server from the OpenVPN client), check the IP address: http://www.myipaddress.com/
-			After you connected to VPN Server, check the IP address: http://www.myipaddress.com/
+   * Before you connect to VPN server (login to the VPN server from the OpenVPN client), check the IP address: http://www.myipaddress.com/
+   
+   * After you connected to VPN Server, check the IP address: http://www.myipaddress.com/
+			
+#### Step-7: Test the connection
 
-#### Step-7: Now, try to connect to your instance (Make sure you completed step-5) from the terminal.
+   * Login into VPN serevr either admin/normal user creds.
+   * Try to connect to EC2 instance.
+   * Logout from VPN Serevr, check still the public instance connected.
 
 #### Step-8: Disconnect from OpenVPN client, check the terminal still you connected to the instance or not.
 
