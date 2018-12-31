@@ -7,8 +7,13 @@
 	
 #### Step-2: Create a server (public EC2 Instance into your VPC) using the AMI OpenVPN Server (from the AWS Market Place).
 
-			Create Elastic IP and assign to OpenVPN server.
+   * For this practice, you can choose type **t2.micro**.
+   * By default, it will creae one security group.
+   * Create Elastic IP and assign to OpenVPN server.
+   
       
+   ![image](https://user-images.githubusercontent.com/24622526/50554128-069f8700-0cdb-11e9-9cd8-e57f1a891b33.png)
+
 #### Step-3: Connect to open VPN server and agree the terms
 
 			Please enter 'yes' to indicate your agreement [no]: yes
