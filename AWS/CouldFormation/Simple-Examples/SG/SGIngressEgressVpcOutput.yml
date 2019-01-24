@@ -1,5 +1,5 @@
 AWSTemplateFormatVersion: "2010-09-09"
-Description: A sample template to create SG instance with inbound rules
+Description: A sample template to create SG instance with inbound and outbount rules, and output the SG id
 Resources:
   MySG:
     Type: AWS::EC2::SecurityGroup
