@@ -1,7 +1,7 @@
 AWSTemplateFormatVersion: "2010-09-09"
 Description: A sample template to create SG instance with inbound rules
 Resources:
-  MyEC2Instance:
+  MySG:
     Type: AWS::EC2::SecurityGroup
     Properties: 
       GroupName: SampleSG
