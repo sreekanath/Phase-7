@@ -1,5 +1,5 @@
 AWSTemplateFormatVersion: "2010-09-09"
-Description: A simple template to create 1 VPC, 1 private and 2 public subnets, 1 provate and public route table, 1 igw, 1 natgateway and 1 private , 1 public EC2 instance - finally printing the output values
+Description: A simple template to create 1 VPC, 1 private and 2 public subnets, 1 private and 1 public route table, 1 igw, 1 natgateway and 1 private , 1 public EC2 instance - finally printing the output values
 Resources:
   # Creating VPC first before EC2 instanced launched into the network.
   # Giving the name to VPC in the combination of stack name and our own name.
