@@ -1,6 +1,8 @@
 AWSTemplateFormatVersion: "2010-09-09"
 Description: A simple template to create 1 VPC, 1 private and 2 public subnets, 1 provate and public route table, 1 igw, 1 natgateway and 1 private , 1 public EC2 instance - finally printing the output values
 Resources:
+  # Creating VPC first before EC2 instanced launched into the network.
+  # Giving the name to VPC in the combination of stack name and our own name.
   MyVPC:
     Type: AWS::EC2::VPC
     Properties: 
@@ -10,20 +12,27 @@ Resources:
        Tags:
        - Key: Name
          Value: !Sub "${AWS::StackName}-MyVPC"
-        
+  # Creating  an internet gateway for public EC2 instances and public subnets, routes
   InternetGateway:
     Type: "AWS::EC2::InternetGateway"
     Properties:
        Tags:
        - Key: Name
          Value: !Sub "${AWS::StackName}-MyIGW"
-    
+  # Attaching internet gateway with VPC
   VPCGatewayAttachment:
     Type: "AWS::EC2::VPCGatewayAttachment"
     Properties:
       InternetGatewayId: !Ref InternetGateway
       VpcId: !Ref MyVPC
-  
+  # Creating Elastic IP to assign to NAT Gateway
+  ElasticIP:
+    Type: AWS::EC2::EIP
+    Properties:
+      Domain: vpc
+  # Creating a nat gateway for private EC2 instances and private subnets, routes.
+  # NAT gateway is associating with Elastic IP
+  # NAT gateway is depending on the assiciation of VPC & IGW.
   NATGateway:
     DependsOn: VPCGatewayAttachment
     Type: AWS::EC2::NatGateway
@@ -38,11 +47,8 @@ Resources:
         -
           Key: Name
           Value: !Sub "${AWS::StackName}-NAT"
-  ElasticIP:
-    Type: AWS::EC2::EIP
-    Properties:
-      Domain: vpc
 
+  # Creating public route table by referring vpc.
   PublicRouteTable:
     Type: AWS::EC2::RouteTable
     Properties:
@@ -52,7 +58,7 @@ Resources:
         Value: !Sub "${AWS::StackName}-Public Subnets"
       - Key: Network
         Value: Public
-        
+  # Updating the public route table route configuration with IGW, so that it will become a public route table.
   PublicRoute:
     DependsOn: VPCGatewayAttachment
     Type: AWS::EC2::Route
@@ -61,6 +67,7 @@ Resources:
       DestinationCidrBlock: 0.0.0.0/0
       GatewayId: !Ref InternetGateway
 
+  # Creating private route table by referring vpc.
   PrivRouteTable:
     Type: AWS::EC2::RouteTable
     Properties:
@@ -70,7 +77,7 @@ Resources:
         Value: !Sub "${AWS::StackName}-Private Subnets"
       - Key: Network
         Value: Private
-        
+  # Updating the private route table route configuration with NATGateway, so that it will become a private route table.        
   PrivateRoute:
     DependsOn: VPCGatewayAttachment
     Type: AWS::EC2::Route
@@ -78,7 +85,8 @@ Resources:
       RouteTableId: !Ref PrivRouteTable
       DestinationCidrBlock: 0.0.0.0/0
       NatGatewayId: !Ref NATGateway
-
+  # Creating 3 subnets - Subnet01, Subnet02, Subnet03 for each region.
+  # Public will be assigned automativally to the EC2 Instance which will be launched into Subnet01 
   Subnet01:
     Type: AWS::EC2::Subnet
     Metadata:
@@ -118,25 +126,25 @@ Resources:
       Tags:
       - Key: Name
         Value: !Sub "${AWS::StackName}-priv Subnet03"
-
+  # Subnet01 and public route table association
   Subnet01RouteTableAssociation:
     Type: AWS::EC2::SubnetRouteTableAssociation
     Properties:
       SubnetId: !Ref Subnet01
       RouteTableId: !Ref PublicRouteTable
-
+  # Subnet02 and public route table association
   Subnet02RouteTableAssociation:
     Type: AWS::EC2::SubnetRouteTableAssociation
     Properties:
       SubnetId: !Ref Subnet02
       RouteTableId: !Ref PublicRouteTable
-
+  # Subnet03 and private route table association
   Subnet03RouteTableAssociation:
     Type: AWS::EC2::SubnetRouteTableAssociation
     Properties:
       SubnetId: !Ref Subnet03
       RouteTableId: !Ref PrivRouteTable
-
+  # Creating a security group with inboud and outbound rules
   MySG:
     Type: AWS::EC2::SecurityGroup
     Properties:
@@ -164,7 +172,9 @@ Resources:
           CidrIp: 177.71.207.128/26
           FromPort: '80'
           ToPort: '80'
-
+  # Creating a network by referring public subnet i.e., Subnet01.
+  # So that EC2 instance will be launched to public subnet, also a public ip will be assigned to EC2 instance.
+  # Referring security group also.
   pubnetworkIn:
     Type: AWS::EC2::NetworkInterface
     Properties:
@@ -177,7 +187,8 @@ Resources:
         -
           Key: Network
           Value: Web
-
+  # Creating an EC2 instance by referring pubnetworkIn.
+  # It will be launched into the corresponding subnet i.e., public subnet.
   MyPublicEC2Instance:
     Type: "AWS::EC2::Instance"
     Properties: 
@@ -199,7 +210,9 @@ Resources:
             Iops: 200
             DeleteOnTermination: true
             VolumeSize: 10
-      
+  # Creating a network by referring private subnet i.e., Subnet03.
+  # So that EC2 instance will be launched to private subnet, public ip will NOT be assigned to EC2 instance.
+  # Referring security group also.      
   privateworkIn:
     Type: AWS::EC2::NetworkInterface
     Properties:
@@ -212,7 +225,8 @@ Resources:
         -
           Key: Network
           Value: db
-
+  # Creating an EC2 instance by referring privateworkIn.
+  # It will be launched into the corresponding subnet i.e., private subnet.
   MyPrivateEC2Instance:
     Type: "AWS::EC2::Instance"
     Properties: 
@@ -234,7 +248,7 @@ Resources:
             Iops: 200
             DeleteOnTermination: true
             VolumeSize: 10
-
+  # Printing all the respources vpcid, subnetids, securitygroup id, instances ids, nat gateway id, and elastic ip id.
 Outputs:
 
   VpcId:
@@ -256,3 +270,11 @@ Outputs:
   PublicInstanceId:
     Description: Instance Details
     Value: !Ref MyPrivateEC2Instance
+
+  NatGatewayId:
+    Description: NATGateway Details
+    Value: !Ref NATGateway
+    
+  ElasticIPID:
+    Description: ElasticIP Details
+    Value: !Ref ElasticIP
