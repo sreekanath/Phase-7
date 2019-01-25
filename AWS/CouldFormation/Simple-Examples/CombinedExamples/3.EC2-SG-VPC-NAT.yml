@@ -267,7 +267,7 @@ Outputs:
     Description: Instance Details
     Value: !Ref MyPublicEC2Instance
 
-  PublicInstanceId:
+  PrivateInstanceId:
     Description: Instance Details
     Value: !Ref MyPrivateEC2Instance
 
