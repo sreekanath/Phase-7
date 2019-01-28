@@ -7,3 +7,5 @@ ex: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/sample-templa
 
 
 https://docs.aws.amazon.com/opsworks/latest/userguide/using-s3-bucket.html
+
+https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html
