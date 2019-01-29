@@ -67,7 +67,7 @@ Resources:
       Tags:
         -
           Key: "Name"
-          Value: !Join [ "-", [ !Ref "AWS::StackName", "Public", "Outer", "Proxy", "Server", "ASG" ] ]
+          Value: !Join [ "-", [ !Ref "AWS::StackName", "Jenkins", "Server", "ASG" ] ]
           PropagateAtLaunch: true
   # create launch configuration for ASG
   LaunchConfig:
