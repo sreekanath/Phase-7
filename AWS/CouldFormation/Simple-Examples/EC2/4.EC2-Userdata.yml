@@ -1,5 +1,5 @@
 AWSTemplateFormatVersion: "2010-09-09"
-Description: A simple template to create EC2 instance and installing nginx web server
+Description: A simple template to create EC2 instance
 Resources:
   MyEC2Instance:
     Type: "AWS::EC2::Instance"
@@ -19,4 +19,7 @@ Resources:
         Fn::Base64: !Sub | 
           #!/bin/bash
           sudo apt-get update -y && sudo apt-get install nginx -y
-          
+Outputs:
+  ReleaseNote:
+    Description: This is your website URL which is running in nginx webserver.
+    Value: !Join ["", [ "http://", !GetAtt MyEC2Instance.PublicIp, "/" ]]
