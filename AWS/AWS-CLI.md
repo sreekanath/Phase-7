@@ -8,7 +8,7 @@ https://docs.aws.amazon.com/cli/latest/userguide/tutorial-ec2-ubuntu.html
 
     Or
 
-    apt-get update -y && python3 python-pip -y
+    apt-get update -y && apt-get install python3 python-pip -y
 
     pip install awscli
 
