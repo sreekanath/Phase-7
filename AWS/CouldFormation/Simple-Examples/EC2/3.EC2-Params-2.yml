@@ -16,6 +16,7 @@ Resources:
       SecurityGroups:
         - !Ref InstanceSecurityGroup
       KeyName: aws-desk
+      InstanceType: !Ref InstanceTypeParameter
       ImageId: "ami-035be7bafff33b6b6"
   InstanceSecurityGroup:
     Type: 'AWS::EC2::SecurityGroup'
