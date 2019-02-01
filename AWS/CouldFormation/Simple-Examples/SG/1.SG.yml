@@ -1,5 +1,5 @@
 AWSTemplateFormatVersion: "2010-09-09"
-Description: A sample template to create SG instance
+Description: A sample template to create Security Group
 Resources:
   MySG:
     Type: AWS::EC2::SecurityGroup
